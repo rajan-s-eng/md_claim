@@ -1,0 +1,119 @@
+<odoo>
+    
+    <!-- Service Report -->
+   <template id="report_claim">
+        <t t-call="web.external_layout">
+            <div class="page" style="font-family: 'Arial', sans-serif; text-align: left;">
+
+                <!-- Header -->
+                <div class="text-center">
+                    <h2 style="padding-bottom: 5px;">
+                        Claim Report
+                    </h2>
+                </div>
+
+                <!-- Claim  -->
+                <div class="mt-3">
+                    <h4 style="color: #4CAF50; padding-bottom: 5px;">
+                        Claim Details
+                    </h4>
+                    <table class="table table-sm mt-2" style="width: 100%;">
+                        <tr>
+                            <th>Reference:</th>
+                            <td><span t-field="o.name"/></td>
+                        </tr>
+                        <tr>
+                            <th>Customer:</th>
+                            <td><span t-field="o.partner_id"/></td>
+                        </tr>
+                        <tr>
+                            <th>Job Order:</th>
+                            <td><span t-field="o.job_order"/></td>
+                        </tr>
+                        <tr>
+                            <th>Plat No:</th>
+                            <td><span t-field="o.plat_no"/></td>
+                        </tr>
+                        <tr>
+                            <th>Responsible:</th>
+                            <td><span t-field="o.responsible_id"/></td>
+                        </tr>
+                        <tr>
+                            <th>Claim Type:</th>
+                            <td><span t-field="o.claim_type_id"/></td>
+                        </tr>
+                        <tr>
+                            <th>Claim To Company:</th>
+                            <td><span t-field="o.claim_to_company_id"/></td>
+                        </tr>
+                        <tr>
+                            <th>Estimated Amount:</th>
+                            <td><span t-field="o.estimated_amount"/></td>
+                        </tr>
+                        <tr>
+                            <th>Claim Date:</th>
+                            <td><span t-field="o.claim_date"/></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Resolution -->
+                <div class="mt-4">
+                    <h4 style="color: #4CAF50; padding-bottom: 5px;">
+                        Resolution Details
+                    </h4>
+                    <table class="table table-sm mt-2" style="width: 100%;">
+                        <tr>
+                            <th>Resolution Type:</th>
+                            <td><span t-field="o.resolution_type_id"/></td>
+                        </tr>
+                        <tr>
+                            <th>Resolution Description:</th>
+                            <td><span t-field="o.resolution_desc"/></td>
+                        </tr>
+                        <tr>
+                            <th>Resolution Date:</th>
+                            <td><span t-field="o.resolution_date"/></td>
+                        </tr>
+                        <tr>
+                            <th>Resolved By:</th>
+                            <td><span t-field="o.resolved_by_id"/></td>
+                        </tr>
+                        <tr>
+                            <th>Invoice:</th>
+                            <td><span t-field="o.invoice_id"/></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Footer -->
+                <div class="text-center mt-4">
+                    <hr style="border-top: 1px solid #4CAF50;"/>
+                    <p class="mb-0">Thank you for choosing our claim service.</p>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Report Action -->
+    <template id="report_action_report_claim">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="md_claim.report_claim" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="appointment_report_forma_invoice" model="ir.actions.report">
+        <field name="name">Print</field>
+        <field name="model">md.claim</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">md_claim.report_action_report_claim</field>
+        <field name="report_file">md_claim.report_action_report_claim</field>
+        <field name="print_report_name">'Claim Management Report'</field>
+        <field name="binding_model_id" ref="model_md_claim"/>
+        <field name="binding_type">report</field>
+        <field name="multi">True</field> 
+    </record>
+
+</odoo>

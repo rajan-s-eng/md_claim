@@ -31,7 +31,7 @@ class MdClaim(models.Model):
         ('resolved', 'Resolved'),
         ('close', 'Close'),
         ('cancelled', 'Cancelled'),
-    ], default='draft', readonly=True)
+    ], default='draft', readonly=True, tracking=True)
 
     def action_start_investigation(self):
         for record in self:
