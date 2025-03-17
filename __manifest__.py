@@ -1,0 +1,25 @@
+# __manifest__.py
+{
+    'name': 'Claim Management',
+    'version': '17.0',
+    'summary': 'Claim Management',
+    'sequence': 1,
+    'description': 'Manage Claim ',
+    'category': 'Management',
+    'author': 'Sismatix',
+    'website': 'http://sismatix.co',
+    'depends': ['contacts','base','purchase'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/claim_manage_data.xml',
+        'views/menu_views.xml',
+        'views/md_claim_views.xml',    
+        'views/claim_type_views.xml',    
+        'views/resoluation_claim_type_views.xml',    
+        'views/create_claim.xml',    
+        'views/claim_create.xml',    
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

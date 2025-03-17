@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- Md claim  -->
+    <record id="seq_md_claim" model="ir.sequence">
+        <field name="name">Md claim</field>
+        <field name="code">md.claim</field>
+        <field name="prefix">AS/</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>

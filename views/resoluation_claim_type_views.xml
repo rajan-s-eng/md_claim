@@ -1,0 +1,34 @@
+<odoo>
+    
+    <record id="view_resouluation_type_tree" model="ir.ui.view">
+        <field name="name">resouluation.type.tree</field>
+        <field name="model">resouluation.type</field>
+        <field name="arch" type="xml">
+            <tree string="Claim Management">
+                <field name="resouluation_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_resouluation_type_form" model="ir.ui.view">
+        <field name="name">resouluation.type.form</field>
+        <field name="model">resouluation.type</field>
+        <field name="arch" type="xml">
+            <form string="Claim Management">
+                <sheet>
+                    <group>
+                         <field name="resouluation_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_resouluation_type" model="ir.actions.act_window">
+        <field name="name">Resouluation Type</field>
+        <field name="res_model">resouluation.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_resouluation_type" name="Resouluation Type" parent="menu_claim_management" action="action_resouluation_type" sequence="15"/>
+</odoo>

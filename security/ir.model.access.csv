@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_md_claim,access_md_claim,model_md_claim,,1,1,1,1
+access_claim_type,access_claim_type,model_claim_type,,1,1,1,1
+access_resouluation_type,access_resouluation_type,model_resouluation_type,,1,1,1,1

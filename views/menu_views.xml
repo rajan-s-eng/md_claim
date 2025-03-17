@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem
+            id="menu_claim_management"
+            name="Claim"
+            sequence="200"/>
+</odoo>
