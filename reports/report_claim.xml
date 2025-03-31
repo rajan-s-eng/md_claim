@@ -85,12 +85,6 @@
                         </tr>
                     </table>
                 </div>
-
-                <!-- Footer -->
-                <div class="text-center mt-4">
-                    <hr style="border-top: 1px solid #4CAF50;"/>
-                    <p class="mb-0">Thank you for choosing our claim service.</p>
-                </div>
             </div>
         </t>
     </template>

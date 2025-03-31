@@ -18,6 +18,7 @@
         'views/resoluation_claim_type_views.xml',    
         'views/create_claim.xml',    
         'views/claim_create.xml',  
+        'views/create_claim_crm_views.xml',  
         'reports/report_claim.xml',  
     ],
     'installable': True,

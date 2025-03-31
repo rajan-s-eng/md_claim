@@ -24,6 +24,7 @@ class MdClaim(models.Model):
     resolution_date = fields.Date(string="Resolution Date", tracking=True)
     resolved_by_id = fields.Many2one(comodel_name='res.users', string="Resolved By", tracking=True)
     invoice_id = fields.Many2one(comodel_name='account.move', string="Invoice")
+    lead_id = fields.Many2one(comodel_name='crm.lead', string="Opportunity")
 
     state = fields.Selection([
         ('draft', 'Draft'),

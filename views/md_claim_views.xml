@@ -71,6 +71,7 @@
                         </group>
                         <group>
                             <field name="invoice_id"/>
+                            <field name="lead_id"/>
                             <field name="estimated_amount" readonly="state in ('close','cancelled')"/>
                             <field name="claim_to_company_id" readonly="state in ('close','cancelled')" required="state == 'draft'"/>
                             <field name="claim_date" readonly="state in ('close','cancelled')" required="state == 'draft'"/>

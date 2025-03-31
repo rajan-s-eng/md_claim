@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="view_crm_create_claim_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='504']" position="after">
+                <button name="action_claim_create" type="object" string="Create Claim" class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_property_form" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button type="object" class="oe_stat_button" icon="fa-file-o" name="view_crm"
+                    context="{'default_partner_id': id}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="crm_count" />
+                        </span>
+                        <span class="o_stat_text">Claims</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
